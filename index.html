@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="https://cursedprograms.github.io/qr-code-scanner/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Scanner</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <link href="https://cursedprograms.github.io/cursedentertainment/cursedFavicon.png" rel="icon" type="image/x-icon" />
+</head>
+
+<body>
+  <h1>QR Code Scanner</h1>
+  <br>
+  <div id="reader"></div>
+  <br>
+  <div id="result"></div>
+  <br>
+  <button id="scanButton">Start Scanning</button>
+  <br>
+  <div class="loader" id="loader"></div>
+  <br>
+  <div class="icons_container"></div>
+  <iframe src="https://cursedprograms.github.io/cursedentertainment/iframes/social-media-icons/social-media-icons.html"
+    frameborder="0">
+  </iframe>
+  </div>
+  <br>
+  <footer id="dynamicFooter"></footer>
+  <script src="https://cursedprograms.github.io/cursedentertainment/scripts/footer.js"></script>
+  <script>
+    const html5QrCode = new Html5Qrcode("reader");
+    const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+      document.getElementById('result').innerHTML = `<strong>Scanned QR Code:</strong> ${decodedText}`;
+      html5QrCode.stop();
+      document.getElementById('scanButton').textContent = 'Start Scanning';
+      document.getElementById('loader').style.display = 'none';
+    };
+    const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+
+    document.getElementById('scanButton').addEventListener('click', () => {
+      const button = document.getElementById('scanButton');
+      if (button.textContent === 'Start Scanning') {
+        button.textContent = 'Stop Scanning';
+        document.getElementById('loader').style.display = 'block';
+        html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+      } else {
+        button.textContent = 'Start Scanning';
+        document.getElementById('loader').style.display = 'none';
+        html5QrCode.stop();
+      }
+    });
+  </script>
+</body>
+
+</html>
