@@ -25,6 +25,10 @@ Visit the live website [here](https://cursedprograms.github.io/qr-code-scanner/)
 
 <br>
 
+https://github.com/CursedPrograms/qr-code-creator
+
+<br>
+
 © Cursed Entertainment 2024
 
 <br>
