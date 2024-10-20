@@ -9,8 +9,8 @@
 </div>
   <br>
 
-<a href="https://github.com/CursedPrograms/website-template/actions/workflows/proof-html.yml">
-    <img class="workflow-badge workflow-success" src="https://github.com/CursedPrograms/website-template/actions/workflows/proof-html.yml/badge.svg" alt="Proof HTML Workflow">
+<a href="https://github.com/CursedPrograms/qr-code-scanner/actions/workflows/proof-html.yml">
+    <img class="workflow-badge workflow-success" src="https://github.com/CursedPrograms/qr-code-scanner/actions/workflows/proof-html.yml/badge.svg" alt="Proof HTML Workflow">
 </a>
 <br>
 <div align="center">
